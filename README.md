@@ -25,4 +25,6 @@
 
   http://www.android-studio.org/  从该网址下载所需要的开发工具。
   
-  请自行安装相关工具，具体安排不做阐述。
+  请自行安装相关工具（包括jdk，jre，环境变量的设置等等），具体安装不做阐述。
+  
+  安装完成以后，创建新项目：react-native init YourProjectName
