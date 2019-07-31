@@ -20,3 +20,9 @@
   yarn config set registry https://registry.npm.taobao.org --global  //重定向yarn数据源
 
   yarn config set disturl https://npm.taobao.org/dist --global
+  
+# 下载安装开发工具（这里我只尝试了window版的Android Studio）
+
+  http://www.android-studio.org/  从该网址下载所需要的开发工具。
+  
+  请自行安装相关工具，具体安排不做阐述。
