@@ -29,6 +29,10 @@
   
   安装完成以后，创建新项目：react-native init YourProjectName
   
+# 我下载的是android studio
+
+![Image text](https://raw.githubusercontent.com/hongmaju/light7Local/master/img/productShow/20170518152848.png)
+  
 # src/Modules/Home 下面集成了react-redux + reducer + reselect + dispatch action
   
   1.在本工程里面，集成了一个最简单的action，Home/index.js 首次异步读取API数据，dispatch getHomeList action，reducer进行数据存储。
