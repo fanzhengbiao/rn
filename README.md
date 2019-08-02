@@ -28,3 +28,9 @@
   请自行安装相关工具（包括jdk，jre，环境变量的设置等等），具体安装不做阐述。
   
   安装完成以后，创建新项目：react-native init YourProjectName
+  
+# src/Modules/Home 下面集成了react-redux + reducer + reselect + dispatch action
+  
+  1.在本工程里面，集成了一个最简单的action，Home/index.js 首次异步读取API数据，dispatch getHomeList action，reducer进行数据存储。
+  
+  2.在集成了reselect数据缓存机制，针对大型react / react-native 项目有意想不到的功能。
