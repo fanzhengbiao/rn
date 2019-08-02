@@ -1,42 +1,33 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 import { GetFetch } from '../../Heapler/Helpers';
+import { getHomeList } from './Store/HomeActions';
+import { makeSelectLoading, makeSelectList } from './Store/HomeConstants';
 import { Image, FlatList, StyleSheet, Text, View } from "react-native";
 
 var REQUEST_URL =
   "https://raw.githubusercontent.com/facebook/react-native/0.51-stable/docs/MoviesExample.json";
 
-export default class Home extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: [],
-      loaded: false
-    };
-  }
-
+class Home extends Component {
   componentDidMount() {
     this.fetchData();
   }
 
   fetchData = () => {
-    GetFetch(REQUEST_URL)
-      .then(responseData => {
-        console.log('responseData:',responseData);
-        this.setState({
-          data: this.state.data.concat(responseData.movies),
-          loaded: true
-        });
-      });
+    GetFetch(REQUEST_URL).then(responseData => {
+      this.props.getHomeList(responseData.movies);
+    });
   }
 
   render() {
-    if (!this.state.loaded) {
+    if (this.props.loading) {
       return this.renderLoadingView();
     }
 
     return (
       <FlatList
-        data={this.state.data}
+        data={this.props.list}
         renderItem={this.renderMovie}
         style={styles.list}
         keyExtractor={item => item.id}
@@ -68,6 +59,7 @@ export default class Home extends Component {
   }
 }
 
+
 var styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -96,3 +88,10 @@ var styles = StyleSheet.create({
     backgroundColor: "#F5FCFF"
   }
 });
+
+const mapStateToProps = createStructuredSelector({
+  loading: makeSelectLoading,
+  list: makeSelectList
+})
+
+export default connect(mapStateToProps, { getHomeList })(Home);
