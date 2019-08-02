@@ -31,7 +31,7 @@
   
 # 我下载的是android studio
 
-![Image text](https://raw.githubusercontent.com/hongmaju/light7Local/master/img/productShow/20170518152848.png)
+![Image text](https://raw.githubusercontent.com/fanzhengbiao/rn/master/src/Image/67C1F6D5-3B86-47fb-9B50-0A1EC682A24A.png)
   
 # src/Modules/Home 下面集成了react-redux + reducer + reselect + dispatch action
   
